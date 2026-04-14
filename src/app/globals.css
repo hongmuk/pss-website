@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+:root {
+  --brand-primary: #0E3967;
+  --brand-secondary: #4472C4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Pretendard', 'Lato', sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', 'Pretendard', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-medium rounded-md hover:bg-brand-dark transition-colors;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-brand-primary text-brand-primary font-medium rounded-md hover:bg-brand-primary hover:text-white transition-colors;
+  }
+  .section-title {
+    @apply text-4xl lg:text-5xl font-bold text-brand-primary mb-4;
+  }
+  .section-subtitle {
+    @apply text-base text-gray-500 italic;
+  }
+}
+
+/* 이미지 우클릭·드래그 방지 */
+.protected-img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
