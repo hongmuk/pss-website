@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextType | null>(null);
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>('ko');
   return (
-    <LanguageContext.Provider value={{ locale, setLocale, t: messages[locale] }}>
+    <LanguageContext.Provider value={{ locale, setLocale, t: messages[locale] as Messages }}>
       {children}
     </LanguageContext.Provider>
   );
